@@ -12,6 +12,9 @@ namespace ExceptionHandlingExercise
             // First create an char[], it must contain 6 numbers and 3 letters - name it arr
             // Create a list called numbers that will hold integers
             // Create an string variable with an empty string initializer - name it str
+            var arr = new char[9] { '1', '2', '3', '4', '5', '6', 'a', 'b', 'c' };
+            var numbers = new List<int>();
+            string str = "";
 
             // using a foreach loop, attempt to parse the elements in your char[] with int.Parse()
             // and Exceptions will be thrown 
@@ -21,8 +24,26 @@ namespace ExceptionHandlingExercise
 
 
             //TODO START HERE:
-            
+
             // Make a foreach loop to iterate through your character array
+            foreach (var item in arr)
+            {
+                try
+                {
+                    str = str + item.ToString();
+                    var num = int.Parse(str);
+                    numbers.Add(num);
+                }
+                catch (Exception )
+                {
+                    Console.WriteLine($"Unable to Parse '{item}'"); //character will be the name of each item in your collection
+                }
+            }
+            foreach (var num in numbers)
+            {
+                Console.WriteLine(num);
+            }
+    
             
                 // Now create a try catch
                 
